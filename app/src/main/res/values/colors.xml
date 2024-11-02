@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+        <color name="primaryBackground">#FFFFFF</color>
+        <color name="textPrimary">#474242</color>
+        <color name="textSecondary">#797E79</color>
+        <color name="progressColor">#4CAF50</color>
+        <color name="circleColor">#fae6dc</color>
+        <color name="circleProgressColor">#cd8a73</color>
+    <color name="cardBackgroundColor">#23283C</color>
+    <color name="descriptionTextColor">#84C0F1</color>
+    <color name="accountNumberColor">#EAD38F</color>
+
+
 </resources>

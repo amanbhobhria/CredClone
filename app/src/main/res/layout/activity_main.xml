@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+   >
 
-    <!-- CardView for Item 1 -->
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/item1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -29,7 +30,7 @@
                     android:id="@+id/title1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Title 1"
+                    android:text="title 1 "
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -39,34 +40,110 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/baseline_keyboard_arrow_down_24"
-                android:contentDescription="Expand or Collapse" />
+                    android:contentDescription=""
+                    android:src="@drawable/baseline_keyboard_arrow_down_24" />
             </RelativeLayout>
 
-            <!-- Description always visible -->
+
             <TextView
                 android:id="@+id/description1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Description for item 1."
-                android:paddingTop="8dp" />
+                android:paddingTop="8dp"
+                android:text="move the dial and set the amount upto ₹5000" />
 
-            <!-- Button hidden by default, visible only when expanded -->
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/desc1Lyt"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button 1"
-                android:layout_gravity="center_horizontal"
-                android:visibility="visible"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/white"
+                android:visibility="gone"
+                app:cardCornerRadius="24dp">
+
+                <RelativeLayout
+                    android:id="@+id/circleLyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+
+                    <me.tankery.lib.circularseekbar.CircularSeekBar
+                        android:id="@+id/circularSeekBar"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="8dp"
+                        app:cs_circle_color="#fae6dc"
+                        app:cs_circle_progress_color="#cd8a73"
+                        app:cs_circle_stroke_width="15dp"
+                        app:cs_circle_style="round"
+                        app:cs_max="5000"
+                        app:cs_move_outside_circle="true"
+                        app:cs_pointer_color="@color/black"
+                        app:cs_progress="0" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/header1Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="credit amount"
+                            android:textColor="#474242"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/progressText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="33dp"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/pmsgText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="\@1.04% monthly"
+                            android:textColor="#4CAF50"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/pmsg2Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/circularSeekBar"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="44dp"
+                        android:text="stash is instant.money will be credited within \n seconds"
+                        android:textColor="#797E79"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 
-
-    <!-- CardView for Item 2 -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/item2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -75,13 +152,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#191928"
+            android:padding="6dp"
             android:orientation="vertical"
-            android:padding="16dp">
+            >
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:padding="12dp"
                 android:paddingBottom="8dp">
 
                 <TextView
@@ -89,7 +170,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Title 2"
+                    android:textColor="#DAD5D5"
                     android:textSize="18sp"
+
                     android:textStyle="bold" />
 
 
@@ -98,87 +181,492 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/baseline_keyboard_arrow_down_24"
-                    android:contentDescription="Expand or Collapse" />
+                    android:contentDescription="Expand or Collapse"
+                    android:src="@drawable/baseline_keyboard_arrow_down_24" />
             </RelativeLayout>
 
-            <!-- Description always visible -->
             <TextView
                 android:id="@+id/description2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:layout_marginLeft="8dp"
                 android:text="Description for item 2."
-                android:paddingTop="8dp" />
+                android:textColor="#CCC0C0" />
 
-            <!-- Button hidden by default, visible only when expanded -->
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/desc2Lyt"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button 2"
-                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
                 android:visibility="visible"
-                android:layout_marginTop="8dp" />
+                >
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal">
+
+                        <!-- Card 1 -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/offercard1"
+                            android:layout_width="180dp"
+                            android:layout_height="210dp"
+                            android:layout_marginEnd="16dp"
+                            android:backgroundTint="#41323c"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="6dp"
+                                android:clipChildren="false"
+                                android:clipToPadding="false"
+
+                                >
+
+                                <!--                             reccommend text-->
+                                <TextView
+                                    android:id="@+id/recommendedText1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="1dp"
+                                    android:clipToPadding="false"
+                                    android:background="@drawable/recommended_background"
+                                    android:backgroundTint="@color/white"
+                                    android:padding="4dp"
+                                    android:text="recommended"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:visibility="visible" />
+
+                                <!-- Circle Toggle Button -->
+                                <ImageButton
+                                    android:id="@+id/toggleCircle1"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_below="@+id/recommendedText1"
+                                    android:layout_marginStart="18dp"
+                                    android:layout_marginTop="22dp"
+                                    android:layout_marginEnd="22dp"
+                                    android:padding="4dp"
+                                    android:background="@drawable/baseline_check_circle_outline_24"
+
+                                    android:contentDescription="Toggle selection"
+                                    />
+                                <!--                            android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <TextView
+                                    android:id="@+id/emi1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/toggleCircle1"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="₹4,247"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/toggleCircle1"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_toRightOf="@+id/emi1"
+                                    android:text=" /mo"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/timePeriod1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/emi1"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="4dp"
+                                    android:text="for 12 months"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/timePeriod1"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="See calculations"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+
+                                    />
+
+                            </RelativeLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/offercard2"
+                            android:layout_width="180dp"
+                            android:layout_height="210dp"
+                            android:layout_marginEnd="16dp"
+                            android:backgroundTint="#787391"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="6dp"
+                                android:clipChildren="false"
+                                android:clipToPadding="false"
+
+                                >
+
+                                <!-- Recommended Text -->
+                                <TextView
+                                    android:id="@+id/recommendedText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="1dp"
+                                    android:background="@drawable/recommended_background"
+                                    android:backgroundTint="@color/white"
+                                    android:padding="4dp"
+                                    android:text="recommended"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:visibility="visible" />
+
+                                <!-- Circle Toggle Button -->
+                                <ImageButton
+                                    android:id="@+id/toggleCircle2"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_below="@+id/recommendedText2"
+                                    android:layout_marginStart="18dp"
+                                    android:layout_marginTop="22dp"
+                                    android:layout_marginEnd="22dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:contentDescription="Toggle selection"
+                                    android:src="@drawable/baseline_circle_24" />
+
+                                <TextView
+                                    android:id="@+id/emi2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/toggleCircle2"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="₹4,247"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/toggleCircle2"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_toRightOf="@+id/emi2"
+                                    android:text=" /mo"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/timePeriod2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/emi2"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="4dp"
+                                    android:text="for 12 months"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/timePeriod2"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="See calculations"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+
+                                    />
+
+                            </RelativeLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/offercard3"
+                            android:layout_width="180dp"
+                            android:layout_height="210dp"
+                            android:layout_marginEnd="16dp"
+                            android:backgroundTint="#566887"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="6dp"
+                                android:clipChildren="false"
+                                android:clipToPadding="false"
+
+                                >
+
+                                <!-- Recommended Text -->
+                                <TextView
+                                    android:id="@+id/recommendedText3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="1dp"
+                                    android:background="@drawable/recommended_background"
+                                    android:backgroundTint="@color/white"
+                                    android:padding="4dp"
+                                    android:text="recommended"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:visibility="invisible" />
+
+                                <!-- Circle Toggle Button -->
+                                <ImageButton
+                                    android:id="@+id/toggleCircle3"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_below="@+id/recommendedText3"
+                                    android:layout_marginStart="18dp"
+                                    android:layout_marginTop="22dp"
+                                    android:layout_marginEnd="22dp"
+
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:contentDescription="Toggle selection"
+                                    android:src="@drawable/baseline_circle_24" />
+
+                                <TextView
+                                    android:id="@+id/emi3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/toggleCircle3"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="₹4,247"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/toggleCircle3"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_toRightOf="@+id/emi3"
+                                    android:text=" /mo"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/timePeriod3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/emi3"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="4dp"
+                                    android:text="for 12 months"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/timePeriod3"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="See calculations"
+                                    android:textColor="#B5ACAC"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+
+                                    />
+
+                            </RelativeLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Repeat similar CardView structures for Card 2 and Card 3 -->
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/round_text_outline"
+                    android:padding="12dp"
+
+                    android:text="Create your own plan"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Select your Bank account"
+                    android:textColor="@color/white"
+                    android:background="@drawable/rounded_top_corners"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- CardView for Item 2 -->
+
+    <!-- CardView for Item 3 -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:radius="8dp">
+        android:backgroundTint="@color/cardBackgroundColor"
+        app:cardCornerRadius="8dp">
 
         <LinearLayout
+            android:id="@+id/item3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="12dp">
 
+            <!-- Title and Dropdown Icon -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:paddingBottom="8dp">
 
                 <TextView
                     android:id="@+id/title3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Title 3"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
+                    android:text="Where should we send the money?"
+                    android:textSize="16sp"
+                    android:textColor="@color/white" />
 
                 <ImageView
                     android:id="@+id/dropdownIcon3"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/baseline_keyboard_arrow_down_24"
-                    android:contentDescription="Expand or Collapse" />
+                    android:contentDescription="Expand or Collapse"
+                    android:src="@drawable/baseline_keyboard_arrow_down_24" />
             </RelativeLayout>
 
-            <!-- Description always visible -->
+            <!-- Description Text -->
             <TextView
                 android:id="@+id/description3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Description for item 3."
-                android:paddingTop="8dp" />
+                android:layout_marginHorizontal="12dp"
+                android:text="Amount will be credited in this bank account and EMI will also be debited from this bank account"
+                android:textSize="14sp"
+                android:textColor="@color/descriptionTextColor" />
 
-            <!-- Button hidden by default, visible only when expanded -->
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
+            <!-- Bank Information -->
+            <RelativeLayout
+                android:id="@+id/desc3Lyt"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button 3"
-                android:layout_gravity="center_horizontal"
-                android:visibility="visible"
-                android:layout_marginTop="8dp" />
+                android:visibility="gone"
+                android:layout_marginTop="12dp">
+
+                <ImageView
+                    android:id="@+id/bankImg"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/hdfc_icon"
+                    android:layout_marginStart="10dp" />
+
+                <TextView
+                    android:id="@+id/bankNameTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/bankImg"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="HDFC Bank"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bankNameTxt"
+                    android:layout_toRightOf="@id/bankImg"
+                    android:layout_marginStart="6dp"
+                    android:text="50109013912"
+                    android:textColor="@color/accountNumberColor"
+                    android:textSize="16sp" />
+
+                <!-- KYC Button -->
+                <Button
+                    android:id="@+id/kycBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_top_corners"
+                    android:text="Tap for 1 click KYC"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 
 
 </LinearLayout>
